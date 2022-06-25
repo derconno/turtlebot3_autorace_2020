@@ -205,7 +205,7 @@ class DetectContruction():
         is_obstacle_detected = False
 
         for i in range(scan_start, scan_end):
-            if scan.ranges[i] < threshold_distance and scan.ranges[i] > 0.01:
+            if threshold_distance > scan.ranges[i] > 0.01:
                 is_obstacle_detected = True
 
         self.is_obstacle_detected = is_obstacle_detected
