@@ -112,7 +112,7 @@ class DetectTrafficLight():
         loop_rate = rospy.Rate(10)
         while not rospy.is_shutdown():
             if self.is_image_available == True:
-                if self.is_traffic_light_finished == False:
+                if self.is_traffic_light_finished == False or self.is_calibration_mode:
                     self.fnFindTrafficLight()
 
             loop_rate.sleep()
